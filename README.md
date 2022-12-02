@@ -3,6 +3,8 @@
 ## 1. Complete Binary Tree Inserter 
 *Enlace: https://leetcode.com/problems/complete-binary-tree-inserter/*
 
+**EXPLICACIÓN**
+
 Un árbol binario completo es un árbol binario en el que todos los niveles, excepto posiblemente el último, están completamente llenos y todos los nodos están lo más a la izquierda posible.
 
 Además debe tener todos sus niveles completos, a excepción del último, este último nivel también debe tener por lo menos un nodo completo, es decir, tenga 2 hijos (Sub Izquierdo – Sobre Derecho).
@@ -74,6 +76,8 @@ Output
 ## 2.  Binary Tree Inorder Traversal
 *Enlace: https://leetcode.com/problems/complete-binary-tree-inserter/*
 
+**EXPLICACIÓN**
+
 El recorrido inorden, es un recorrido de los árboles binarios en los que se empieza desde el nodo que se encuentra más a la izquierda de todos, sigue con la raíz y termina con los nodos del lado derecho, entonces, como en el recorrido inorden ya encontramos la raíz, la parte izquierda representa el subárbol izquierdo y la parte derecha representa el subárbol derecho.
 
 **EJEMPLO:**
@@ -110,3 +114,59 @@ Output: [1,3,2]
 ```
 
 ![Logo](https://i.ibb.co/QCcrrP4/Ejercicio3.png)
+
+## 3.  Validate Binary Search Tree
+*Enlace: https://leetcode.com/problems/validate-binary-search-tree/*
+
+**EXPLICACIÓN**
+
+Un árbol binario de búsqueda(ABB) es un árbol binario con la propiedad de que todos los elementos almacenados en el subárbol izquierdo de cualquier nodo x son menores que el elemento almacenado en x ,y todos los elementos almacenados en el subárbol derecho de x son mayores que el elemento almacenado en x.
+
+Un BST válido se define de la siguiente manera:
+
+* El subárbol izquierdo de un nodo contiene solo nodos con claves menores que la clave del nodo.
+* El subárbol derecho de un nodo contiene solo nodos con claves mayores que la clave del nodo.
+* Los subárboles izquierdo y derecho también deben ser árboles de búsqueda binarios.
+
+**CÓDIGO LEETCODE**
+
+```
+class Solution{
+    public boolean isBST(TreeNode root, long low, long high)
+    {
+        if (root==null) return true;
+        
+        if (root.val <= low || root.val >= high) return false;
+
+        return isBST(root.left, low, root.val) && isBST(root.right, root.val, high);
+    }
+    public boolean isValidBST(TreeNode root)
+    {
+        return isBST(root, Long.MIN_VALUE, Long.MAX_VALUE);
+    }
+}
+```
+**PRUEBAS EN LEETCODE**
+
+**Example 1: TRUE**
+
+![Logo](https://assets.leetcode.com/uploads/2020/12/01/tree1.jpg)
+
+```
+Input: root = [2,1,3]
+Output: true
+```
+
+![Logo](https://i.ibb.co/TRmCzQ5/Ejercicio-3.png) 
+
+**Example 2: FALSE**
+
+![Logo](https://assets.leetcode.com/uploads/2020/12/01/tree2.jpg)
+
+```
+Input: root = [5,1,4,null,null,3,6]
+Output: false
+Explanation: The root node's value is 5 but its right child's value is 4.
+```
+
+![Logo](https://i.ibb.co/gw422Sj/Ejercicio-3-FALSE.png)
