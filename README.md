@@ -57,7 +57,7 @@ class CBTInserter {
 ```
 **PRUEBA EN LEETCODE**
 
-**Example 1**
+**Example**
 
 ![Logo](https://assets.leetcode.com/uploads/2021/08/03/lc-treeinsert.jpg)
 
@@ -70,3 +70,43 @@ Output
 ```
 
 ![Logo](https://i.ibb.co/k1wJm3s/Ejercicio1.png)
+
+## 2.  Binary Tree Inorder Traversal
+*Enlace: https://leetcode.com/problems/complete-binary-tree-inserter/*
+
+El recorrido inorden, es un recorrido de los árboles binarios en los que se empieza desde el nodo que se encuentra más a la izquierda de todos, sigue con la raíz y termina con los nodos del lado derecho, entonces, como en el recorrido inorden ya encontramos la raíz, la parte izquierda representa el subárbol izquierdo y la parte derecha representa el subárbol derecho.
+
+**EJEMPLO:**
+
+![Logo](https://i.ibb.co/f4ZJmvy/Ejercicio2.png)
+
+**CÓDIGO LEETCODE**
+
+```
+class Solution {
+        public List<Integer> inorderTraversal(TreeNode root) {
+        List<Integer> list = new ArrayList<>();
+        helper(list,root);
+        return list;
+    }
+    public void helper(List<Integer> list, TreeNode node){
+        if(node==null)
+            return;
+        helper(list,node.left);
+        list.add(node.val);
+        helper(list,node.right);
+    }
+ }
+```
+**PRUEBA EN LEETCODE**
+
+**Example**
+
+![Logo](https://assets.leetcode.com/uploads/2020/09/15/inorder_1.jpg)
+
+```
+Input: root = [1,null,2,3]
+Output: [1,3,2]
+```
+
+![Logo](https://i.ibb.co/QCcrrP4/Ejercicio3.png)
