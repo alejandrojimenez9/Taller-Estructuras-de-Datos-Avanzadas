@@ -74,7 +74,7 @@ Output
 ![Logo](https://i.ibb.co/k1wJm3s/Ejercicio1.png)
 
 ## 2.  Binary Tree Inorder Traversal
-*Enlace: https://leetcode.com/problems/complete-binary-tree-inserter/*
+*Enlace: https://leetcode.com/problems/binary-tree-inorder-traversal/*
 
 **EXPLICACIÓN**
 
