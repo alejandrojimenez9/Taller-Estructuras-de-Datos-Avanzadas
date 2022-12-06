@@ -170,3 +170,20 @@ Explanation: The root node's value is 5 but its right child's value is 4.
 ```
 
 ![Logo](https://i.ibb.co/gw422Sj/Ejercicio-3-FALSE.png)
+
+# 4. Minimum Height Trees 
+
+*Enlace: https://leetcode.com/problems/minimum-height-trees/* 
+
+**EXPLICACIÓN**
+
+**Altura** 
+
+Se define la altura de un nodo en un arbol como la longitud del camino más largo que comienza en el nodo y termina en una hoja.
+
+* La altura de un nodo hoja es 0.
+* La altura de un nodo es igual a la mayor altura de sus hijos + 1.
+
+La altura de un árbol se define como la altura de la raiz.
+
+La altura de un arbol determina la eficiencia de la mayoría de operaciones definidas sobre árboles.
