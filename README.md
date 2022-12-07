@@ -286,3 +286,77 @@ Output: [1]
 
 ![Logo](https://i.ibb.co/TM9k231/arbol.png)
 
+## 5. Find a Corresponding Node of a Binary Tree in a Clone of That Tree
+
+*Enlace: https://leetcode.com/problems/find-a-corresponding-node-of-a-binary-tree-in-a-clone-of-that-tree/* 
+
+**EXPLICACIÓN**
+
+Dado el siguiente árbol, nuestro objetivo será encontrar el elemento [3]:
+
+![Logo](https://i.ibb.co/G3VSWyY/arbol.png)
+
+Se empieza realizando un recorrido bfs (por niveles visitando primero los nodos más cercanos hasta encontrar nuestro objetivo en el árbol clonado), hemos escogido como nodo objetivo el elemento número 3.
+
+Árbol clonado: En el primer movimiento nos ubicamos en el elemento número 6.  
+
+![Logo](https://i.ibb.co/wL44b89/arbol.png)
+
+Como segundo paso bajamos de nivel y nos situamos sobre el elemento número 4.
+
+![Logo](https://i.ibb.co/zN7kYr4/arbol.png)
+
+Continuando en el mismo nivel, avanzamos al nodo más cercano en este mismo nivel, en este caso el elemento número 9.
+
+![Logo](https://i.ibb.co/VjDHcw4/arbol.png)
+
+Cuando se termine de recorrer el nivel en el que estamos, bajamos al siguiente nivel, elemento número 3.
+
+![Logo](https://i.ibb.co/DQckvP7/arbol.png)
+
+Hemos encontrado nuestro elemento número 3, es hora de retornar y finalizar el ejercicio.
+
+Este fue el recorrido que realizamos para encontrar nuestro elemento objetivo
+
+![Logo](https://i.ibb.co/swygQXv/arbol.png)
+
+**CÓDIGO LEETCODE**
+
+```
+public class Solution {
+
+  private TreeNode result;
+
+  public final TreeNode getTargetCopy(final TreeNode original, final TreeNode cloned,
+      final TreeNode target) {
+    inorder(original, cloned, target);
+    return result;
+  }
+
+  private void inorder(TreeNode original, TreeNode cloned, TreeNode target) {
+    if (original == null) {
+      return;
+    }
+    inorder(original.left, cloned.left, target);
+    if (original == target) {
+      result = cloned;
+      return;
+    }
+    inorder(original.right, cloned.right, target);
+  }
+}
+```
+
+**PRUEBAS EN LEETCODE**
+
+**Example:*
+
+![Logo](https://user-images.githubusercontent.com/38175573/206087337-7a0ad580-8764-4bf8-a71b-498cb46f3433.png)
+
+```
+Input: tree = [7,4,3,null,null,6,19], target = 3
+Output: 3
+```
+![Logo](https://i.ibb.co/MpB55Mt/arbol.png)
+
+
