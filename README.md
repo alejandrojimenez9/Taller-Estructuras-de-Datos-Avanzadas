@@ -359,4 +359,133 @@ Output: 3
 ```
 ![Logo](https://i.ibb.co/MpB55Mt/arbol.png)
 
+# 6. Find if Path Exists in Graph
 
+*Enlace: https://leetcode.com/problems/find-if-path-exists-in-graph/* 
+
+**EXPLICACIÓN**
+
+Para la resolución de este problema se usó el algoritmo DFS (Depth First Search) el cual recorre un grafo de manera recursiva, marcando los nodos ya visitados y así permitiendo dar con un camino si existe.
+
+**Como trabaja:**
+
+DFS va formando un árbol al igual que BFS pero lo hace a profundidad. Existen dos formas de hacer el recorrido una es usando una Pila y otra de manera recursiva.
+Lo que hace la solución en pocas palabras es recorrer el grafo de manera recursiva mientras en una lista guardamos los nodos visitados, así tenemos que este algoritmo seguirá iterando mientras no encontremos el destino o terminemos dicho grafo.
+
+**Ejemplo:**
+
+Tomemos como ejemplo el siguiente grafo no dirigido:
+
+![Logo](https://i.ibb.co/HdQv48G/arbol.png)
+
+Al igual que con la pila requerimos un nodo inicial, de manera recursiva llamamos a los adyacentes del nodo inicial, de esta forma se puede ver si llamamos inicialmente a “1”:
+
+Inicial “1”: marcamos “1” como visitado, sus adyacentes son “2”, “3” y “5”.
+
+* Visitados: 1.
+* Adyacentes de 1: 2, 3, 5
+
+![Logo](https://i.ibb.co/HPksRb3/arbol.png)
+
+En la llamada recursiva ira el primero insertado en la lista de adyacencia, en este caso “2”, marcamos como visitado. Ahora el inicial es “2”, sus adyacentes son “1” , “4” y “5”.
+
+* Visitados: 1, 2
+* Adyacentes de 2: 1, 4, 5
+
+![Logo](https://i.ibb.co/c3TZns1/arbol.png)
+
+Evaluamos el 1ero de la lista que es “1” pero ya fue visitado por lo tanto sigo con el siguiente, en este caso “4”, marcamos como visitado. Ahora inicial es “4”, sus adyacentes son “2”.
+
+* Visitados: 1, 2, 4
+* Adyacentes de 4: 2
+
+![Logo](https://i.ibb.co/nPNPdzx/arbol.png)
+
+Tocaría el nodo 2 pero ya fue visitado termina la recursión por ese lado. El siguiente adyacente de “2” es “5”. Ahora inicial es “5”, marcamos como visitado, sus adyacentes son “1” y “2”.
+
+* Visitados: 1, 2, 4, 5
+* Adyacentes de 5: 1, 2
+
+Igual que con nodo “4” sus adyacentes han sido visitados por lo tanto terminamos la recursión por el nodo “2”.
+
+El nodo actual es “1”, sus adyacentes eran “2”, “5” y “3”, estábamos evaluando por “2” pero ya terminamos el siguiente es “5” el cual ya fue visitado, continuamos con “3” este no fue visitado, marcamos como visitado, vemos sus adyacentes “1”.
+
+![Logo](https://i.ibb.co/Zz2ykLd/arbol.png)
+
+* Visitados: 1, 2 , 4 , 5 , 3
+* Adyacentes de 3: 1
+
+![Logo](https://i.ibb.co/qCyktMX/arbol.png)
+
+Como nodo “1” ya fue visitado entonces termina la recursión y termina el recorrido DFS. Como se puede observar el orden en que fueron visitados los nodos es el recorrido DFS del grafo.
+
+![Logo](https://i.ibb.co/41rGBmn/arbol.png)
+
+**CÓDIGO LEETCODE**
+
+```
+class Solution {
+   
+    public boolean validPath(int n, int[][] edges, int source, int destination) {
+        Graph g = new Graph(edges, n);
+        g.visit(source, destination);
+        return g.isVisited(destination);
+    }
+    
+    class Graph {
+        
+        HashMap<Integer, List<Integer>> map = new HashMap<>();
+        boolean[] visited;
+        
+        public Graph(int[][] edges, int n) {
+            
+			// initialize the graph with all possible nodes
+            for(int i = 0; i < n; i++) {
+                map.put(i, new ArrayList<Integer>());
+            }
+            
+			// Insert edges into graph. Make sure both source and destination are placed in the map 
+			// since this is an undirected graph with cycles possible
+            for(int i = 0; i < edges.length; i++) {
+                List<Integer> list = map.get(edges[i][0]);
+                list.add(edges[i][1]);
+                map.put(edges[i][0], list);
+                
+                list = map.get(edges[i][1]);
+                list.add(edges[i][0]);
+                map.put(edges[i][1], list);
+            }
+             
+            visited = new boolean[map.size()];
+        }
+        
+        public void visit(int source, int destination) {
+            List<Integer> dests = map.get(source);
+            visited[source] = true;
+            
+            for(int i = 0; i < dests.size(); i++) {
+                int next = dests.get(i);
+                if(!visited[next]) {
+                    visit(next, destination);
+                }
+            }
+        }
+        
+        public boolean isVisited(int destination) {
+            return visited[destination];
+        }
+    }
+}
+```
+**PRUEBAS EN LEETCODE**
+
+**Example:*
+
+![Logo](https://assets.leetcode.com/uploads/2021/08/14/validpath-ex1.png)
+
+```
+Input: n = 3, edges = [[0,1],[1,2],[2,0]], source = 0, destination = 2
+Output: true
+```
+
+![Logo](https://i.ibb.co/8syzdBQ/arbol.png)
