@@ -223,4 +223,66 @@ Y por último, solo queda un único nodo. Cuando quedan 1 o 2 nodos, estos son l
 
 ![Logo](https://i.ibb.co/DfP3mcx/arbol.png)
 
+**CÓDIGO LEETCODE**
+
+```
+class Solution{
+    public List<Integer> findMinHeightTrees(int n, int[][] edges){
+        List<Integer> list = new ArrayList();
+        if(edges == null || edges.length == 0 || edges[0] == null || edges[0].length == 0){
+            list.add(0);
+            return list;
+        }
+        List<Integer>[] graph = new ArrayList[n];
+        for(int i=0; i < n; i++){
+            graph[i] = new ArrayList<>();
+        }
+        int[] indegree = new int[n];
+        for (int i=0; i < edges.length; i++){
+            graph[edges[i][0]].add(edges[i][1]);
+            graph[edges[i][1]].add(edges[i][0]);
+            indegree[edges[i][0]]++;
+            indegree[edges[i][1]]++;
+        }
+        Queue<Integer> q = new LinkedList<>();
+        for(int i=0; i < n; i++){
+            if(indegree[i] == 1){
+                q.add(i);
+            }
+        }
+        while(n > 2){
+            int size = q.size();
+            n -= size;
+            for(int i=0; i < size; i++){
+                int temp = q.poll();
+                for(int dad : graph[temp]){
+                    if(indegree[dad] == 1) continue;
+                    indegree[dad]--;
+                    if(indegree[dad] == 1){
+                        q.add(dad);
+                        }
+                }
+            }
+        }
+      while (!q.isEmpty()){
+            list.add(q.poll());
+            
+        }
+        return list;
+    }
+}
+
+```
+**PRUEBAS EN LEETCODE**
+
+**Example:*
+
+![Logo](https://assets.leetcode.com/uploads/2020/09/01/e1.jpg)
+
+```
+Input: n = 4, edges = [[1,0],[1,2],[1,3]]
+Output: [1]
+```
+
+![Logo](https://i.ibb.co/TM9k231/arbol.png)
 
