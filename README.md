@@ -489,3 +489,63 @@ Output: true
 ```
 
 ![Logo](https://i.ibb.co/8syzdBQ/arbol.png)
+
+## 7. Relative Ranks
+*Enlace: https://leetcode.com/problems/relative-ranks/*
+
+**EXPLICACIÓN**
+
+Lo que realiza principalmente el código es guardar los números y el índice, de tal manera que ordene los resultados y arroje un orden de posiciones y su respectiva premiación.
+
+**Casos de Prueba:**
+
+Al ejecutar el programa se lee un archivo txt que contiene 5 números, y después se corre el programa y en otro archivo txt muestra las posiciones en que quedaron.
+
+Se coloca la dirección donde se van a ubicar los archivos txt
+
+![Logo](https://i.ibb.co/Lpnhrny/arbol.png)
+
+![Logo](https://i.ibb.co/RDZgtry/arbol.png)
+
+**CÓDIGO LEETCODE**
+
+```
+public String[] f(int[] nums) {
+        if (nums == null) {
+            return null;
+        }
+        String[] result = new String[nums.length];
+
+        HashMap<Integer, Integer> index = new HashMap<Integer, Integer>();
+        for (int i = 0; i < nums.length; i++) {
+            index.put(nums[i], i);
+        }
+        Arrays.sort(nums);
+        String[] prizes = new String[]{"Gold Medal", "Silver Medal", "Bronze Medal"};
+        for (int i = nums.length - 1; i >= 0; i--) {
+            int rank = nums.length - 1 - i;
+            if (rank < 3) {
+                result[index.get(nums[i])] = prizes[rank];
+            } else {
+                result[index.get(nums[i])] = "" + (rank + 1);
+            }
+        }
+      
+        return result;
+    }
+```
+**PRUEBAS EN LEETCODE**
+
+**Example:*
+
+
+```
+Input: score = [5,4,3,2,1]
+Output: ["Gold Medal","Silver Medal","Bronze Medal","4","5"]
+```
+![Logo](https://i.ibb.co/YR1B169/arbol.png)
+
+# Autor
+
+Luis Alejandro Jiménez Turizo - 1151463
+
