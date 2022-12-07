@@ -187,3 +187,40 @@ Se define la altura de un nodo en un arbol como la longitud del camino más larg
 La altura de un árbol se define como la altura de la raiz.
 
 La altura de un arbol determina la eficiencia de la mayoría de operaciones definidas sobre árboles.
+
+Una forma de encontrar el nodo medio del árbol es comenzar desde cada uno de los nodos hoja y eliminarlos iterativamente hasta que quede con 1 o 2 nodos finales que serán los nodos medios.
+
+* Podemos encontrar los nodos hoja en cada iteración utilizando el grado interior del nodo, es decir, el número de aristas que están conectadas al nodo.
+* Un nodo hoja tendrá un grado de entrada de 1.
+* El algoritmo utilizado será similar a BFS. En cada nivel de BFS, sacaremos el nodo de hoja y empujaremos los nuevos nodos que se convierten en hojas después de la   eliminación de los nodos de hoja en la iteración actual.
+* Esto continuará hasta que nos queden solo 1 o 2 nodos, que serían nuestros nodos intermedios finales que forman los MHT.
+
+**EJEMPLO:**
+
+![Logo](https://i.ibb.co/z7qkvSj/arbol.png)
+
+A partir de este gráfico de árbol inferimos que los números dentro de los nodos indican el grado de entrada (Esto quiere decir que son los números de aristas conectadas al nodo).
+
+![Logo](https://i.ibb.co/9nf9Vnj/arbol.png)
+
+Con cada uno de los nodos de hoja en el nivel actual se eliminará y el grado de entrada de cada nodo adyacente a esa hoja se reducirá en consecuencia.
+
+![Logo](https://i.ibb.co/LhMFy7C/arbol.png)
+
+Se repite el proceso anterior
+
+![Logo](https://i.ibb.co/pjQdTF9/arbol.png)
+
+Continuamos el mismo proceso con los nuevos nodos que se convierten en el nodo hoja.
+
+![Logo](https://i.ibb.co/BzkzG0s/arbol.png)
+
+Se continúa realizando el mismo proceso
+
+![Logo](https://i.ibb.co/27hzmLW/arbol.png)
+
+Y por último, solo queda un único nodo. Cuando quedan 1 o 2 nodos, estos son los nodos intermedios finales que forman el MHT.
+
+![Logo](https://i.ibb.co/DfP3mcx/arbol.png)
+
+
