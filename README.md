@@ -571,3 +571,9 @@ Output: ["Gold Medal","Silver Medal","Bronze Medal","4","5"]
 
 Luis Alejandro Jiménez Turizo - 1151463
 
+# Documentación
+
+https://docs.google.com/document/d/1Abc3hfu3d0RV4rOB7qAJ9Ot7zTOYCNtk/edit?usp=sharing&ouid=107276455939492266964&rtpof=true&sd=true
+
+
+
