@@ -9,6 +9,28 @@ Un árbol binario completo es un árbol binario en el que todos los niveles, exc
 
 Además debe tener todos sus niveles completos, a excepción del último, este último nivel también debe tener por lo menos un nodo completo, es decir, tenga 2 hijos (Sub Izquierdo – Sobre Derecho).
 
+**¿Cómo se crea un árbol binario completo?**
+
+* Seleccione el primer elemento de la lista para que sea el nodo raíz. (n° de elementos en el nivel-I: 1)
+
+![Logo](https://i.ibb.co/6gDVYZW/arbol.png)
+
+Seleccione el primer elemento como raíz
+
+* Coloque el segundo elemento como hijo izquierdo del nodo raíz y el tercer elemento como hijo derecho. (n° de elementos en nivel-II: 2)
+
+![Logo](https://i.ibb.co/F8xfX8L/arbol.png)
+
+12 como hijo izquierdo y 9 como hijo derecho
+
+* Coloque los siguientes dos elementos como elementos secundarios del nodo izquierdo del segundo nivel. Nuevamente, coloque los siguientes dos elementos como elementos secundarios del nodo derecho del segundo nivel (número de elementos en el nivel III: 4) elementos).
+
+* Sigue repitiendo hasta llegar al último elemento.
+
+![Logo](https://i.ibb.co/8xhX9yj/arbol.png)
+
+5 como hijo izquierdo y 6 como hijo derecho
+
 **EJEMPLO:**
 
 ![Logo](https://www.techiedelight.com/wp-content/uploads/Complete-Binary-Tree.png)
