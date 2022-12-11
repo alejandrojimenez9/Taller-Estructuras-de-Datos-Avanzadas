@@ -33,7 +33,13 @@ Seleccione el primer elemento como raíz
 
 **EJEMPLO:**
 
+Comparación cuando es un árbol binario completo y cuando no es un árbol binario completo.
+
 ![Logo](https://www.techiedelight.com/wp-content/uploads/Complete-Binary-Tree.png)
+
+Los elementos del último nivel están colocados de izquierda a derecha sin dejar huecos entre ellos.
+
+![Logo](https://i.ibb.co/sCzjRsy/Sin-t-tulo.png)
 
 **CÓDIGO LEETCODE**
 
@@ -93,6 +99,8 @@ Output
 [null, 1, 2, [1, 2, 3, 4]]
 ```
 
+**SOLUCIÓN ACEPTADA**
+
 ![Logo](https://i.ibb.co/k1wJm3s/Ejercicio1.png)
 
 ## 2.  Binary Tree Inorder Traversal
@@ -102,9 +110,19 @@ Output
 
 El recorrido inorden, es un recorrido de los árboles binarios en los que se empieza desde el nodo que se encuentra más a la izquierda de todos, sigue con la raíz y termina con los nodos del lado derecho, entonces, como en el recorrido inorden ya encontramos la raíz, la parte izquierda representa el subárbol izquierdo y la parte derecha representa el subárbol derecho.
 
-**EJEMPLO:**
+Recorrido Inorden: subárbol izquierdo, raíz, subárbol derecho
+
+![Logo](https://i.ibb.co/W2w7M2J/Sin-t-tulo.png)
+
+**EJEMPLO 1:**
 
 ![Logo](https://i.ibb.co/f4ZJmvy/Ejercicio2.png)
+
+**EJEMPLO 2:**
+
+![Logo](https://i.ibb.co/P9xcvmG/Sin-t-tulo.png)
+
+Recorrido Inorden: 10, 13, 18, 21, 25, 33, 40.
 
 **CÓDIGO LEETCODE**
 
@@ -134,6 +152,7 @@ class Solution {
 Input: root = [1,null,2,3]
 Output: [1,3,2]
 ```
+**SOLUCIÓN ACEPTADA**
 
 ![Logo](https://i.ibb.co/QCcrrP4/Ejercicio3.png)
 
@@ -149,6 +168,14 @@ Un BST válido se define de la siguiente manera:
 * El subárbol izquierdo de un nodo contiene solo nodos con claves menores que la clave del nodo.
 * El subárbol derecho de un nodo contiene solo nodos con claves mayores que la clave del nodo.
 * Los subárboles izquierdo y derecho también deben ser árboles de búsqueda binarios.
+
+**EJEMPLO:**
+
+Comparación cual es y cual no es un árbol de búsqueda binaria válido.
+
+![Logo](https://i.ibb.co/Jr7XtDL/Sin-t-tulo.png)
+
+No es válido el segundo árbol, debido a que el nodo izquierdo (7) es mayor que el nodo hijo derecho (6), por tal motivo no es considerado un árbol de búsqueda binaria válido.
 
 **CÓDIGO LEETCODE**
 
@@ -179,6 +206,8 @@ Input: root = [2,1,3]
 Output: true
 ```
 
+**SOLUCIÓN ACEPTADA**
+
 ![Logo](https://i.ibb.co/TRmCzQ5/Ejercicio-3.png) 
 
 **Example 2: FALSE**
@@ -190,6 +219,8 @@ Input: root = [5,1,4,null,null,3,6]
 Output: false
 Explanation: The root node's value is 5 but its right child's value is 4.
 ```
+
+**SOLUCIÓN ACEPTADA**
 
 ![Logo](https://i.ibb.co/gw422Sj/Ejercicio-3-FALSE.png)
 
@@ -306,6 +337,8 @@ Input: n = 4, edges = [[1,0],[1,2],[1,3]]
 Output: [1]
 ```
 
+**SOLUCIÓN ACEPTADA**
+
 ![Logo](https://i.ibb.co/TM9k231/arbol.png)
 
 ## 5. Find a Corresponding Node of a Binary Tree in a Clone of That Tree
@@ -379,6 +412,9 @@ public class Solution {
 Input: tree = [7,4,3,null,null,6,19], target = 3
 Output: 3
 ```
+
+**SOLUCIÓN ACEPTADA**
+
 ![Logo](https://i.ibb.co/MpB55Mt/arbol.png)
 
 # 6. Find if Path Exists in Graph
@@ -510,6 +546,8 @@ Input: n = 3, edges = [[0,1],[1,2],[2,0]], source = 0, destination = 2
 Output: true
 ```
 
+**SOLUCIÓN ACEPTADA**
+
 ![Logo](https://i.ibb.co/8syzdBQ/arbol.png)
 
 ## 7. Relative Ranks
@@ -565,6 +603,8 @@ public String[] f(int[] nums) {
 Input: score = [5,4,3,2,1]
 Output: ["Gold Medal","Silver Medal","Bronze Medal","4","5"]
 ```
+**SOLUCIÓN ACEPTADA**
+
 ![Logo](https://i.ibb.co/YR1B169/arbol.png)
 
 # Autor
