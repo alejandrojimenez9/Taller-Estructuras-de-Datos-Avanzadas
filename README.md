@@ -561,11 +561,25 @@ Lo que realiza principalmente el código es guardar los números y el índice, d
 
 Al ejecutar el programa se lee un archivo txt que contiene 5 números, y después se corre el programa y en otro archivo txt muestra las posiciones en que quedaron.
 
-Se coloca la dirección donde se van a ubicar los archivos txt
+Se coloca la dirección donde se va a ubicar el archivo txt de entrada.
 
 ![Logo](https://i.ibb.co/Lpnhrny/arbol.png)
 
+Se coloca la dirección donde se va a ubicar el archivo txt de salida.
+
 ![Logo](https://i.ibb.co/RDZgtry/arbol.png)
+
+**PRUEBA:**
+
+Archivo txt entrada (in.txt)
+
+![Logo](https://i.ibb.co/QJ49Tdd/Sin-t-tulo.png)
+
+*Se ejecuta el programa*
+
+Archivo txt salida (out.txt)
+
+![Logo](https://i.ibb.co/7QXhg5S/Sin-t-tulo.png)
 
 **CÓDIGO LEETCODE**
 
