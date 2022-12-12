@@ -612,7 +612,6 @@ public String[] f(int[] nums) {
 
 **Example:*
 
-
 ```
 Input: score = [5,4,3,2,1]
 Output: ["Gold Medal","Silver Medal","Bronze Medal","4","5"]
@@ -624,6 +623,8 @@ Output: ["Gold Medal","Silver Medal","Bronze Medal","4","5"]
 # Solución de Ejercicio en ![Logo](https://codeforces.org/s/45151/images/codeforces-sponsored-by-ton.png)
 
 ## 8. Heap Operations
+
+*Enlace: https://codeforces.com/problemset/problem/681/C*
 
 En este ejercicio se maneja los montones binarios, que son un caso particular y sencillo de la estructura de datos Montículo, y está basada en un árbol binario balanceado, que puede verse como un árbol binario con dos restricciones adicionales: Propiedad de montículo. En cualquier momento el montón contiene varios números enteros (posiblemente ninguno), algunos de ellos pueden ser iguales.
 
@@ -666,9 +667,23 @@ Las próximas líneas deben contener la secuencia corregida de registros siguien
 deben ser números enteros que no excedan 10^9 por su valor absoluto.
 ```
 
+**CASOS DE PRUEBA**
+
+**Caso normal**
+
+**Ejemplo 1:**
+
+Que se cumplan los parámetros de entrada
+
+![Logo](https://i.ibb.co/GWKqYWt/Sin-t-tulo.png)
+
+En el primer caso, después de insertar el número 3 en el montón, el número mínimo es 3. Para que el resultado del primer getMin sea igual a 4, primero se debe eliminar el número 3 del montón y luego agregar el número 4 al montón
+
 # Solución de Ejercicio en ![Logo](https://img.atcoder.jp/assets/icon/avatar.png)
 
 ## 9. Count Distinct Integers
+
+*Enlace: https://atcoder.jp/contests/abc240/tasks/abc240_b?lang=en*
 
 Este problema narra que dado un número de n donde n es la cantidad de un conjunto de números, se debe imprimir la cantidad de números distintos del conjunto de número de entrada, es decir, se debe enviar como salida el conteo de números distintos dentro de un conjunto de datos.
 
@@ -688,6 +703,33 @@ HashSet es una colección de estructura de datos de Set Interface, cuya caracter
 **¿Cual es la ventaja?**
 
 Usando HashSet solo basta con preguntar cada uno de los elementos de la lista o entrada de datos que nos llegue para que únicamente almacene aquellos datos que no sean repetidos dentro de la colección.
+
+**CÓDIGO**
+
+```
+import java.util.*;
+	public class Main {
+	 
+	   public static void main(String[] args) {
+	 
+	       Scanner sc = new Scanner(System.in);
+	       Set <Integer> l = new HashSet <Integer>() ;
+	       int n = sc.nextInt();
+	       for(int i =0;i<n;i++) {
+	           l.add(sc.nextInt());
+	       }
+	       System.out.println(l.size()); //Imprime la cantidad de num distintos
+	      
+	   }
+    }
+```
+**Nota:**
+
+Hay que tener en cuenta que una vez agregado cada uno de los datos respecto al recorrido de este, se imprime como resultado el tamaño (Cantidad de datos) de la estructura HashSet.
+
+**SOLUCIÓN ACEPTADA**
+
+![Logo](https://i.ibb.co/7bJd42j/Sin-t-tulo.png)
 
 # Autor
 
