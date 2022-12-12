@@ -722,6 +722,12 @@ static void solve() {
     }
 ```
 
+**PRUEBA**
+
+Se ingresa la cantidad de números, en este caso son 5, los números ingresados son el 1, 1, 2, 2 y 4; y como resultado es 3, ya que son la cantidad de números distintos.
+
+![Logo](https://i.ibb.co/xjzJqBv/Sin-t-tulo.png)
+
 # Solución de Ejercicio en ![Logo](https://img.atcoder.jp/assets/icon/avatar.png)
 
 ## 9. Count Distinct Integers
@@ -766,15 +772,10 @@ import java.util.*;
 	   }
     }
 ```
+
 **Nota:**
 
 Hay que tener en cuenta que una vez agregado cada uno de los datos respecto al recorrido de este, se imprime como resultado el tamaño (Cantidad de datos) de la estructura HashSet.
-
-**PRUEBA**
-
-Se ingresa la cantidad de números, en este caso son 5, los números ingresados son el 1, 1, 2, 2 y 4; y como resultado es 3, ya que son la cantidad de números distintos.
-
-![Logo](https://i.ibb.co/xjzJqBv/Sin-t-tulo.png)
 
 **SOLUCIÓN ACEPTADA**
 
@@ -787,6 +788,4 @@ Luis Alejandro Jiménez Turizo - 1151463
 # Documentación
 
 https://drive.google.com/file/d/16OtCSba7UBOdIbH4pG0GwA61zZyp7amG/view?usp=share_link
-
-
 
