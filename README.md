@@ -770,6 +770,12 @@ import java.util.*;
 
 Hay que tener en cuenta que una vez agregado cada uno de los datos respecto al recorrido de este, se imprime como resultado el tamaño (Cantidad de datos) de la estructura HashSet.
 
+**PRUEBA**
+
+Se ingresa la cantidad de números, en este caso son 5, los números ingresados son el 1, 1, 2, 2 y 4; y como resultado es 3, ya que son la cantidad de números distintos.
+
+![Logo](https://i.ibb.co/xjzJqBv/Sin-t-tulo.png)
+
 **SOLUCIÓN ACEPTADA**
 
 ![Logo](https://i.ibb.co/7bJd42j/Sin-t-tulo.png)
@@ -780,7 +786,7 @@ Luis Alejandro Jiménez Turizo - 1151463
 
 # Documentación
 
-https://docs.google.com/document/d/1Abc3hfu3d0RV4rOB7qAJ9Ot7zTOYCNtk/edit?usp=sharing&ouid=107276455939492266964&rtpof=true&sd=true
+https://drive.google.com/file/d/16OtCSba7UBOdIbH4pG0GwA61zZyp7amG/view?usp=share_link
 
 
 
